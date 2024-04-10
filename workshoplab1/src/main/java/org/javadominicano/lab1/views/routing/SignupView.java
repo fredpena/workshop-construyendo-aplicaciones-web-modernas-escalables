@@ -6,6 +6,7 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.router.*;
+import java.security.SecureRandom;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Random;
@@ -18,7 +19,7 @@ import java.util.Random;
 @Route(value = "signup")
 public class SignupView extends Div implements BeforeLeaveObserver, BeforeEnterObserver {
 
-    private final Random random = new Random();
+    private final Random random = new SecureRandom();
 
     public SignupView() {
         Button exit = new Button("Exit");
