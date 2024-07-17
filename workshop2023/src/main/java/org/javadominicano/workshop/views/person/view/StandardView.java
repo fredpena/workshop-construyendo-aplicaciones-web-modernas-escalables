@@ -25,6 +25,7 @@ import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 import jakarta.annotation.security.PermitAll;
+import java.security.SecureRandom;
 import org.javadominicano.workshop.data.entity.Person;
 import org.javadominicano.workshop.data.service.PersonService;
 import org.javadominicano.workshop.views.MainLayoutDrawer;
@@ -49,7 +50,7 @@ public class StandardView extends Div {
     private final Filters filters;
     private final transient PersonService personService;
     private final transient BasicForm form;
-    private static final Random random = new Random();
+    private static final Random random = new SecureRandom();
 
     public StandardView(PersonService personService) {
         this.personService = personService;
