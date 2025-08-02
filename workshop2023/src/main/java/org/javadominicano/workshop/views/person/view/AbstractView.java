@@ -19,6 +19,7 @@ import com.vaadin.flow.data.renderer.LitRenderer;
 import com.vaadin.flow.dom.Style;
 import com.vaadin.flow.spring.data.VaadinSpringDataHelpers;
 import com.vaadin.flow.theme.lumo.LumoUtility;
+import java.security.SecureRandom;
 import org.javadominicano.workshop.data.entity.Person;
 import org.javadominicano.workshop.data.service.PersonService;
 import org.javadominicano.workshop.views.person.Filters;
@@ -37,7 +38,7 @@ public abstract class AbstractView extends Div {
     private Grid<Person> grid;
     private final Filters filters;
     private final transient PersonService personService;
-    private static final Random random = new Random();
+    private static final Random random = new SecureRandom();
 
     protected abstract Dialog createDialog(String title, Person element, Runnable reload);
 
